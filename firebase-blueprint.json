@@ -1,0 +1,59 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "Authenticated user profile",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "User UID" },
+        "email": { "type": "string", "description": "User work email" },
+        "displayName": { "type": "string", "description": "User full name" },
+        "createdAt": { "type": "string", "description": "Creation timestamp" }
+      },
+      "required": ["uid", "email"]
+    },
+    "Candidate": {
+      "title": "Candidate",
+      "description": "Recruitment pipeline candidate record",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Candidate ID" },
+        "name": { "type": "string", "description": "Candidate full name" },
+        "email": { "type": "string", "description": "Candidate email" },
+        "role": { "type": "string", "description": "Primary role designation" },
+        "experienceYears": { "type": "number", "description": "Years of experience" },
+        "expectedCtcLpa": { "type": "number", "description": "Expected CTC in LPA" },
+        "location": { "type": "string", "description": "Location city" },
+        "status": { "type": "string", "description": "Recruitment pipeline stage status" },
+        "client": { "type": "string", "description": "Assigned client company" }
+      },
+      "required": ["id", "name", "email", "role", "experienceYears", "expectedCtcLpa", "location", "status"]
+    },
+    "Client": {
+      "title": "Client",
+      "description": "Corporate client hiring partner",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Client ID" },
+        "name": { "type": "string", "description": "Client company name" },
+        "logoText": { "type": "string", "description": "Logo acronym or short name" },
+        "industry": { "type": "string", "description": "Industry domain" }
+      },
+      "required": ["id", "name", "logoText", "industry"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "Authenticated user profile records"
+    },
+    "/candidates/{candidateId}": {
+      "schema": "Candidate",
+      "description": "Executive recruitment pool candidates"
+    },
+    "/clients/{clientId}": {
+      "schema": "Client",
+      "description": "Client partner organizations and mandates"
+    }
+  }
+}

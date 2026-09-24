@@ -1,0 +1,6 @@
+{
+  "name": "Candidates Multi-Filter Engine",
+  "description": "Executive recruitment platform with an overview dashboard, candidate multi-filter engine, and client mandates management",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
